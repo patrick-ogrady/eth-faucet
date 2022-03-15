@@ -15,10 +15,6 @@ a {
   margin-bottom: 20px;
 }
 
-.etherscan {
-  color: black;
-}
-
 .progress-container {
   height: 10px;
 }
@@ -33,7 +29,7 @@ a {
 }
 
 .example-header-image {
-  background-image: url('https://ih1.redbubble.net/image.529445044.0787/st,small,845x845-pad,1000x1000,f8f8f8.u7.jpg');
+  background-image: url('https://github.com/ava-labs/subnet-evm/raw/master/imgs/wagmi.png');
   background-size: cover;
 }
 
