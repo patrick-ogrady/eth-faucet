@@ -1,9 +1,9 @@
 <mat-toolbar color="primary" class="mat-elevation-z4">
-  <span>ETH Testnet Faucet</span>
+  <span>WAGMI Faucet</span>
   <span class="spacer"></span>
-  <a href="https://github.com/rauljordan/eth-faucet" target="_blank">
+  <a href="https://github.com/patrick-ogrady/eth-faucet" target="_blank">
     <button mat-button class="example-icon" aria-label="Example icon-button with share icon">
-      View on Github <mat-icon>favorite</mat-icon>
+      View on Github
     </button>
   </a>
 </mat-toolbar>
@@ -16,28 +16,24 @@
   <form [formGroup]="formGroup">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Get Testnet ETH</mat-card-title>
-      <mat-card-subtitle>Request ETH to your wallet address</mat-card-subtitle>
+      <mat-card-title>Get WGM</mat-card-title>
+      <mat-card-subtitle>Request WGM to your wallet address</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <div *ngIf="transactionHash" class="results">
-        <div>
-          <a class="etherscan" href="https://eth.etherscan.io/tx/{{transactionHash}}" target="_blank">
-            View on Etherscan
-          </a>
-        </div>
-      </div>
       <div class="form-field-container">
         <mat-form-field appearance="fill">
-          <mat-label>ETH Wallet Address</mat-label>
+          <mat-label>WAGMI Wallet Address</mat-label>
           <input matInput placeholder="0x..." name="walletAddress" formControlName="walletAddress">
           <mat-icon matSuffix>account_balance_wallet</mat-icon>
         </mat-form-field>
         <mat-error *ngIf="formGroup.dirty && formGroup.controls.walletAddress.hasError('required')">
-          ETH address is required
+          WAGMI address is required
         </mat-error>
       </div>
       <button mat-raised-button color="accent" (click)="submit($event)" [disabled]="loading">Request Funds</button>
     </mat-card-content>
   </form>
+  <div *ngIf="transactionHash" class="results">
+    <mat-card-subtitle style="color: darkgreen;">Sent 1 WGM!</mat-card-subtitle>
+  </div>
 </mat-card>
